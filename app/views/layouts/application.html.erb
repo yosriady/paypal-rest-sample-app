@@ -4,11 +4,53 @@
   <title>PaypalRestSampleApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
+    <div class="container">
+      <div class="page-header">
+        <h1><span class="glyphicon glyphicon-shopping-cart"></span> PayPalian Robot Store</h1>
+      </div>
+      <p class="lead">This is a sample Rails app showcasing Express Checkout and Recurring Payments using the <%= link_to "PayPal Ruby SDK", "https://github.com/paypal/PayPal-Ruby-SDK"%>.</p>
 
-<%= yield %>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="panel panel-info">
+            <div class="panel-heading"><strong>ExpressBot</strong> <span class="pull-right badge">$10</span></div>
+            <div class="panel-body">
+                <%= image_tag "robot0.png", class: 'center-block' %>
+            </div>
+            <div class="panel-footer">
+                <%= form_tag("/orders" ,method: :post) do %>
+                  <input class="btn btn-success btn-block btn-lg" type="submit" value="Buy Now">
+                <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="panel panel-info">
+            <div class="panel-heading"><strong>RecurBot</strong> <span class="pull-right badge">$5 / month</span></div>
+            <div class="panel-body">
+                <%= image_tag "robot1.png", class: 'center-block' %>
+            </div>
+            <div class="panel-footer">
+                <input class="btn btn-success btn-block btn-lg" type="submit" value="Subscribe Now">
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <hr>
+
+      <%= yield %>
+
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Made by <a href="http://yosriady.com">Yos Riady</a> for Orbital<a href="http://github.com/Leventhan" class="pull-right">@Leventhan</a></p>
+      </div>
+    </footer>
 </body>
 </html>

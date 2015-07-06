@@ -1,0 +1,9 @@
+<h1><span class="glyphicon glyphicon-calendar"></span>  Past Orders</h1>
+
+<% if @orders.each do |order| %>
+  <p>
+    <%= order %>
+  </p>
+<% end.empty? %>
+  <p class="alert alert-info">No orders yet!</p>
+<% end %>
