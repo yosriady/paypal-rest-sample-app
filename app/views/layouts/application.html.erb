@@ -14,6 +14,22 @@
       </div>
       <p class="lead">This is a sample Rails app showcasing Express Checkout and Recurring Payments using the <%= link_to "PayPal Ruby SDK", "https://github.com/paypal/PayPal-Ruby-SDK"%>.</p>
 
+      <!-- Notice messages -->
+      <% flash.each do |type, content| %>
+          <% if content.respond_to?('each')
+              content.each do |item| %>
+                  <%= render 'layouts/alert',
+                      type: type,
+                      content: item %>
+              <% end %>
+          <% else %>
+              <%= render 'layouts/alert',
+                      type: type,
+                      content: content %>
+          <% end %>
+      <% end %>
+      <!-- End notice messages -->
+
       <div class="row">
         <div class="col-xs-6">
           <div class="panel panel-info">
@@ -40,7 +56,6 @@
           </div>
         </div>
       </div>
-
       <hr>
 
       <%= yield %>
