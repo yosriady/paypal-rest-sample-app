@@ -32,10 +32,4 @@ class OrdersController < ApplicationController
     Order.create(response: JSON(params.slice(:paymentId, :token, :PayerID)))
     redirect_to root_url, notice: "Payment Succesful"
   end
-
-  # POST /subscribe
-  # Note this is a bad idea, in a real application please create a separate Subscription model for recurring payments
-  def subscribe
-    # TODO
-  end
 end

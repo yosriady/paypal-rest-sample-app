@@ -31,7 +31,7 @@
       <!-- End notice messages -->
 
       <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-6 col-xs-offset-3">
           <div class="panel panel-info">
             <div class="panel-heading"><strong>ExpressBot</strong> <span class="pull-right badge">$10</span></div>
             <div class="panel-body">
@@ -41,17 +41,6 @@
                 <%= form_tag("/orders" ,method: :post) do %>
                   <input class="btn btn-success btn-block btn-lg" type="submit" value="Buy Now">
                 <% end %>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-6">
-          <div class="panel panel-info">
-            <div class="panel-heading"><strong>RecurBot</strong> <span class="pull-right badge">$5 / month</span></div>
-            <div class="panel-body">
-                <%= image_tag "robot1.png", class: 'center-block' %>
-            </div>
-            <div class="panel-footer">
-                <input class="btn btn-success btn-block btn-lg" type="submit" value="Subscribe Now">
             </div>
           </div>
         </div>
